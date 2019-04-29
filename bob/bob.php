@@ -6,15 +6,21 @@ class Bob
     {
         if (Statement::isQuestion($statement) && Statement::isYelling($statement)) {
             return "Calm down, I know what I'm doing!";
-        } elseif (Statement::isQuestion($statement)) {
+        } 
+        
+        if (Statement::isQuestion($statement)) {
             return "Sure.";
-        } elseif (Statement::isYelling($statement)) {
+        } 
+        
+        if (Statement::isYelling($statement)) {
             return "Whoa, chill out!";
-        } elseif (Statement::isSilence($statement)) {
+        } 
+        
+        if (Statement::isSilence($statement)) {
             return "Fine. Be that way!";
-        } else {
-            return "Whatever.";
-        }
+        } 
+        
+        return "Whatever.";
     }
 }
 
