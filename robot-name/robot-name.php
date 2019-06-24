@@ -1,13 +1,13 @@
 <?php
 
-define("LETTERS", 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-define("DIGITS", '1234567890');
-define("NUMBEROFLETTERS", 2);
-define("NUMBEROFDIGITS", 3);
-
 class Robot
 {
-    private $generatedNames = array();
+    private const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    private const DIGITS = '1234567890';
+    private const NUMBEROFLETTERS = 2;
+    private const NUMBEROFDIGITS = 3;
+
+    private $generatedNames = [];
 
     public function __construct()
     {
@@ -22,11 +22,11 @@ class Robot
     public function reset()
     {
         do {
-            $robotName =  $this->getRandomSubstring(LETTERS, NUMBEROFLETTERS) . $this->getRandomSubstring(DIGITS, NUMBEROFDIGITS); 
+            $robotName =  $this->getRandomSubstring(self::LETTERS, self::NUMBEROFLETTERS) . $this->getRandomSubstring(self::DIGITS, self::NUMBEROFDIGITS); 
         } while (in_array($robotName, $this->generatedNames));
 
         $this->robotName = $robotName;
-        array_push($this->generatedNames, $robotName);
+        $this->generatedNames[] = $robotName;
     }
 
     private function getRandomSubstring(string $string, int $length)

@@ -9,7 +9,7 @@ class RobotTest extends PHPUnit\Framework\TestCase
 
     public function setUp(): void
     {
-        $this->robot = new Robot();
+        $thexercism download --exercise=difference-of-squares --track=phpis->robot = new Robot();
     }
 
     public function testHasName()
