@@ -1,6 +1,6 @@
 <?php
 
-function encode($input)
+function encode(string $input) : string
 {
     return preg_replace_callback('/(.)\1*/', 
         function($matches) {
@@ -9,7 +9,7 @@ function encode($input)
         $input);
 }
 
-function decode($input)
+function decode(string $input) : string
 {
     return preg_replace_callback('/(\d+)(.)/', 
         function($matches) { 
